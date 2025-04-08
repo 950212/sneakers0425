@@ -45,3 +45,24 @@ function Card({onFavorite,imageUrl,title,price,onPlus}) {
 }
 
 export default Card;
+
+// как сделать favorite
+
+//в Card.index.js пишем хук const (isFavorite,setIsFavorite) = React.useState(false);
+
+//в Card.index.js пишем const onClickFavorite = () => {
+// setIsFavorite(!isFavorite); };
+
+// на картинке сердечка которое в Card.index.js ставим onClick c переходом 
+// в onClick={onClickFavorite}>
+// <div className={styles.favorite} onClick={onClickFavorite}> 
+// там же<img src= {isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
+// 
+
+
+
+// const(isFavorite,setIsFavorite) = React.useState(false);
+// const addFavorite = () => { setIsFavorite(!isFavorite)};
+
+// <div className = "favorite" onClick = {addFavorite};
+// < img src = { isFavorite ? "/liked.svg" : "/unliked.svg"}

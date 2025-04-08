@@ -89,30 +89,4 @@ function App() {
 
 export default App;
 
-
-// import React from "react";
-
-// function App() {
-//   const [searchValue, setSearchValue] = React.useState('');
-
-//   const onChangeSearchInput = (event) => {
-//     console.log(event.target.value);
-//     setSearchValue(event.target.value);
-//   };
-
-//   return (
-//     <div className="search-block d-flex" style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }}>
-//       <img src="/img/search.svg" alt="Search" width="20" height="20" />
-//       <input
-//         id="search"
-//         name="search"
-//         value={searchValue}
-//         onChange={onChangeSearchInput}
-//         placeholder="Search..."
-//         style={{ padding: "5px", fontSize: "16px", width: "200px" }}
-//       />
-//     </div>
-//   );
-// }
-
-// export default App;
+// import React from "react"
