@@ -57,12 +57,3 @@ export default Card;
 // в onClick={onClickFavorite}>
 // <div className={styles.favorite} onClick={onClickFavorite}> 
 // там же<img src= {isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
-// 
-
-
-
-// const(isFavorite,setIsFavorite) = React.useState(false);
-// const addFavorite = () => { setIsFavorite(!isFavorite)};
-
-// <div className = "favorite" onClick = {addFavorite};
-// < img src = { isFavorite ? "/liked.svg" : "/unliked.svg"}

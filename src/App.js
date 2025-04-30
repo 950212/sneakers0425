@@ -9,6 +9,7 @@ function App() {
   const [items, setItems] = React.useState([]);// карточки товаров с бэкэнда
   const [cartItems, setCartItems] = React.useState([]); // хук useState добавление товара в корзину
   const [searchValue, setSearchValue] = React.useState(''); //поиск товара помещаем что вводим в input
+  const [Favorites, setFavorites] = React.useState(''); //создаем массив закладок
   const [cartOpened, setCartOpened] = React.useState(false); // хук useState открытие и закрытие корзины
 
    React.useEffect(()=>{
@@ -36,6 +37,13 @@ function App() {
   };//метод filter возвращает те item.id которые !== id в onRemoveItem т.е. в корзине 
 //после filter останутся все кроссы чей item.id не равны onRemoveItem = (id) 
  
+
+const onAddToFavorite = (obj) =>{
+  axios.post('https://67f584ec913986b16fa4db84.mockapi.io/favorites', obj); 
+  setFavorites(prev => [...prev,obj]); }; 
+
+
+
   const onChangeSearchInput = (event) => {
     // console.log(event.target.value);
     setSearchValue(event.target.value);
