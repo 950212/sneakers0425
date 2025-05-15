@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Card.module.scss";
 
 // console.log(styles);
-function Card({onFavorite,imageUrl,title,price,onPlus}) {
+function Card({id,onFavorites,imageUrl,title,price,onPlus,favorited = false}) {
 
   const [isAded, setIsAded] = React.useState(false); //таким способом  хук useState
-  const [isFavorite, setIsFavorite] = React.useState(false);//добавили хук  ЛАЙКЕД НЕ ЛАЙКЕД 
+  const [isFavorites, setIsFavorites] = React.useState(favorited);//добавили хук  ЛАЙКЕД НЕ ЛАЙКЕД 
  
   const onClickPlus = () => {
     onPlus({imageUrl,title,price});
@@ -14,14 +14,15 @@ function Card({onFavorite,imageUrl,title,price,onPlus}) {
     // setIsAded (!isAded) и isAded получила противоположное значение т.е. true опять кликнули isAded стал -false
   // React.useEffect( () =>{console.log("Переменная мзменена");},[isAded]);
   
-  const onClickFavorite = () => {
-    setIsFavorite(!isFavorite);//добавили const меняет состояние ЛАЙКЕД НЕ ЛАЙКЕД 
+  const onClickFavorites = () => {
+    onFavorites({id,imageUrl,title,price});
+    setIsFavorites(!isFavorites);//добавили const меняет состояние isFavorite и дальше ЛАЙКЕД НЕ ЛАЙКЕД 
    };
 
   return (//ПРИ onClick переход на onClickFavorite
     <div className={styles.card}>
-      <div className={styles.favorite} onClick={onClickFavorite}>   
-        <img src= {isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
+      <div className={styles.favorite} onClick={onClickFavorites}>   
+        <img src= {isFavorites ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
       </div>
       <img className="mr-30" width={133} heigth={112} src={imageUrl} alt="liked" />
       <h5 className="">{title}</h5>
